@@ -38,7 +38,7 @@ const AddGoal = () => {
                     {/* <button type="submit">Send</button> */}
                 </div>
                 <div>
-                    <h4>How much did you accomplish today?</h4>
+                    <h4>How would you rate your accomplishments today?</h4>
                     <div className='radio-container'>
                         <div>
                             <label htmlFor="formRating">1</label>
@@ -46,7 +46,6 @@ const AddGoal = () => {
                                 type="radio"
                                 name="rating"
                                 value={1}
-                                checked={formValues.rating === 1}
                                 onChange={(e) => setFormValues({ ...formValues, rating: e.target.value })} />
                         </div>
 
@@ -55,7 +54,6 @@ const AddGoal = () => {
                             <input type="radio"
                                 name="rating"
                                 value={2}
-                                checked={formValues.rating === 2}
                                 onChange={(e) => setFormValues({ ...formValues, rating: e.target.value })} />
                         </div>
 
@@ -64,7 +62,6 @@ const AddGoal = () => {
                             <input type="radio"
                                 name="rating"
                                 value={3}
-                                checked={formValues.rating === 3}
                                 onChange={(e) => setFormValues({ ...formValues, rating: e.target.value })} />
                         </div>
 
@@ -73,7 +70,6 @@ const AddGoal = () => {
                             <input type="radio"
                                 name="rating"
                                 value={4}
-                                checked={formValues.rating === 4}
                                 onChange={(e) => setFormValues({ ...formValues, rating: e.target.value })} />
                         </div>
 
@@ -83,7 +79,6 @@ const AddGoal = () => {
                                 type="radio"
                                 name="rating"
                                 value={5}
-                                checked={formValues.rating === 5}
                                 onChange={(e) => setFormValues({ ...formValues, rating: e.target.value })} />
                         </div>
                     </div>
