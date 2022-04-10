@@ -12,9 +12,9 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_04_10_045232) do
   create_table "standups", force: :cascade do |t|
-    t.text "goal"
-    t.boolean "is_completed"
-    t.integer "rating"
+    t.text "goal", null: false
+    t.boolean "is_completed", default: false, null: false
+    t.integer "rating", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
