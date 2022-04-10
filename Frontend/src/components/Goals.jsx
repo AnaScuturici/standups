@@ -1,14 +1,16 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { getAPIData } from "./goalsAPI";
+import "./styles/Goals.scss";
 
-const Goals = ()  => {
-    const [goals, setGoals] = useState([]);
+const Goals = () => {
+  const [goals, setGoals] = useState([]);
 
-  useEffect(()=> {
+  useEffect(() => {
     let mounted = true;
     getAPIData().then(items => {
-      if(mounted){
+      if (mounted) {
         setGoals(items);
       }
     });
@@ -17,17 +19,23 @@ const Goals = ()  => {
 
   return (
     <div>
-      <h3>API data</h3>
-      {goals.map(goal =>{
+      <h2 className='goals-title'>Goals history</h2>
+      <Link to="/">
+      <button>Home</button>
+      </Link>
+      <div className='container'>
+        {goals.map(goal => {
           return (
-              <div key={goal.id}>
-                  <p>Goal: {goal.goal}</p>
-                  <p>Done: {goal.is_completed ? "Done" : "Not yet"}</p>
-                  <p>Rating: {goal.rating}</p>
-                  <p>Added on: {goal.created_at}</p>
-              </div>
+            <div className="goal-div" key={goal.id}>
+              <p className='title'>{goal.goal}</p>
+              <p className='completed'>{goal.is_completed ? "Done" : "Not yet"}</p>
+              <p className='rating'>Rating: {goal.rating}</p>
+              <p className='date'>Added on: {goal.created_at}</p>
+            </div>
           )
-      })}
+        })}
+      </div>
+      
     </div>
   )
 }
