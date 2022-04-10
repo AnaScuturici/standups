@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Goals from './components/Goals';
+import Tracker from './components/Tracker';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,6 +13,7 @@ ReactDOM.render(
       <Routes>
           <Route path="/" element={<App />}/>
           <Route path="/goals" element={<Goals />}/>
+          <Route path="/tracker" element={<Tracker />}/>
       </Routes>
     </Router>
   </React.StrictMode>,
