@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className='navbar'>
         <div className='logo'>
-            Standups
+            Morning Standups
         </div>
         <nav className='nav-item'>
             <ul>
@@ -20,7 +20,6 @@ const Navbar = () => {
                     <Link to="/tracker">Weekly Tracker</Link>
                 </li>
             </ul>
-
         </nav>
     </div>
   )
