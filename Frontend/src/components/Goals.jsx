@@ -9,7 +9,7 @@ const getAPIData = async () => {
   return response.data;
 }
 
-function Goals() {
+const Goals = ()  => {
     const [goals, setGoals] = useState([]);
 
   useEffect(()=> {
