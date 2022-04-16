@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import "./styles/Tracker.scss";
 import { getAPIData } from "./goalsAPI";
 import { Chart } from 'react-chartjs-2';
@@ -40,8 +41,11 @@ const Tracker = () => {
 
   return (
     <div>
-      <div className='title'>
+      <div className='title-div'>
         <h2>WEEKLY TRACKER</h2>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
       </div>
 
       <div className='chart-div'>
