@@ -19,10 +19,13 @@ const Goals = () => {
 
   return (
     <div>
-      <h2 className='goals-title'>Goals history</h2>
-      <Link to="/">
-      <button>Home</button>
-      </Link>
+      <div className='title-div'>
+        <h2>Goals history</h2>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+      </div>
+
       <div className='container'>
         {goals.map(goal => {
           return (
@@ -35,7 +38,7 @@ const Goals = () => {
           )
         })}
       </div>
-      
+
     </div>
   )
 }
