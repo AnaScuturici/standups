@@ -26,6 +26,15 @@ const Tracker = () => {
     }]
   }
 
+  const options = {
+    maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+        }
+      }
+  }
+
   return (
     <div>
       <h2>WEEKLY TRACKER</h2>
@@ -33,6 +42,7 @@ const Tracker = () => {
         <Chart
           type="line"
           data={data}
+          options={options}
         />
       </div>
     </div>
