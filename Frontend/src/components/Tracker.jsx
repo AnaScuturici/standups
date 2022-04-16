@@ -40,7 +40,10 @@ const Tracker = () => {
 
   return (
     <div>
-      <h2>WEEKLY TRACKER</h2>
+      <div className='title'>
+        <h2>WEEKLY TRACKER</h2>
+      </div>
+
       <div className='chart-div'>
         <Chart
           type="line"
