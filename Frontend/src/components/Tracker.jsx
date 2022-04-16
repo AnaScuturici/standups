@@ -16,7 +16,9 @@ const Tracker = () => {
   }, []);
 
   const data = {
-    labels: goals.map(goal => goal.created_at),
+    labels: goals
+      .map(goal => goal.created_at)
+      .slice(-7),
     datasets: [{
       data: goals.map(goal => goal.rating),
       borderColor: [
