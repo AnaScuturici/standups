@@ -19,3 +19,12 @@ export const addNewGoal = async (input) => {
         console.error(error);
     }
 }
+
+export const deleteGoal = async (id) => {
+    try {
+        const response = axios.delete(`${API_URL}/${id}`);
+        return response;
+    } catch (error) {
+        console.error(error);
+    }
+}
