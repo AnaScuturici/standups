@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import "./styles/Tracker.scss";
+import { format } from 'date-fns';
 import { getAPIData } from "./goalsAPI";
 import { Chart } from 'react-chartjs-2';
 import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScale, Title, CategoryScale } from 'chart.js';
@@ -18,7 +19,7 @@ const Tracker = () => {
 
   const data = {
     labels: goals
-      .map(goal => goal.created_at)
+      .map(goal => format(new Date(goal.created_at), 'MMM do, yyyy'))
       .slice(-7),
     datasets: [{
       data: goals.map(goal => goal.rating),
