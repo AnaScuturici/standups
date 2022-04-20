@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import { getAPIData } from "./goalsAPI";
+import { getAPIData, deleteGoal } from "./goalsAPI";
 import "./styles/Goals.scss";
 
 const Goals = () => {
@@ -17,6 +17,12 @@ const Goals = () => {
     return () => mounted = false;
   }, []);
 
+const handleDelete = (id) => {
+  console.log(id);
+  deleteGoal(id);
+  setGoals(goals.filter(goal => goal.id !== id));
+}
+
   return (
     <div>
       <div className='title-div'>
@@ -30,6 +36,7 @@ const Goals = () => {
         {goals.map(goal => {
           return (
             <div className="goal-div" key={goal.id}>
+              <button className='delete-btn' onClick={() => handleDelete(goal.id)}>x</button>
               <p className='title'>{goal.goal}</p>
               <p className='completed'>{goal.is_completed ? "Done" : "Not yet"}</p>
               <p className='rating'>Rating: {goal.rating}</p>
