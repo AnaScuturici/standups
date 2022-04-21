@@ -15,8 +15,13 @@
         overflow: hidden;
         box-shadow: 0 2px 30px #fff;
         border-radius: 2px;
-        transition: transform 200ms ease-in;
+        transition: transform 250ms ease-in;
         position: relative;
+    }
+
+    .goal-div:hover,
+    .goal-div:focus {
+        transform: scale(1.1);
     }
 
     .title {
@@ -46,6 +51,11 @@ button {
     top: -10px;
     right: -10px;
     border-radius: 50%;
+}
+
+.delete-btn:hover,
+.delete-btn:focus {
+    background: #80b093;
 }
 
 
