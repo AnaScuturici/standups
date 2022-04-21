@@ -23,13 +23,6 @@ const handleDelete = (id) => {
   setGoals(goals.filter(goal => goal.id !== id));
 }
 
-const date = new Date();
-const dateFormat = date.toLocaleDateString("en-GB", {
-  day: "numeric",
-  month: "long",
-  year: "numeric"
-})
-
   return (
     <div>
       <div className='title-div'>
